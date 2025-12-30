@@ -15,7 +15,7 @@
 
   function createRouteProgress() {
     const el = document.getElementById("route-progress");
-    if (!el) return () => {};
+    if (!el) return () => { };
 
     let timerId = null;
     return () => {
@@ -94,6 +94,25 @@
       return normalizeRoute(decodeURIComponent(routePart));
     };
 
+    const updateNavVisibility = (route) => {
+      const nav = document.querySelector("nav[data-visible-pages]");
+      if (!nav) return;
+
+      const visiblePagesAttr = nav.getAttribute("data-visible-pages");
+      if (!visiblePagesAttr) return;
+
+      const visiblePages = visiblePagesAttr.split(",").map((p) => p.trim());
+      const isPageVisible = visiblePages.includes(route);
+
+      if (isPageVisible) {
+        nav.classList.remove("hidden");
+        nav.style.display = "";
+      } else {
+        nav.classList.add("hidden");
+        nav.style.display = "none";
+      }
+    };
+
     const showRoute = (route) => {
       const activeRoute = normalizeRoute(route);
       const routeChanged = activeRoute !== currentRoute;
@@ -122,6 +141,8 @@
           });
         }
       }
+
+      updateNavVisibility(activeRoute);
 
       if (routeChanged) window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       isFirstRender = false;
