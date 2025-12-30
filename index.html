@@ -424,7 +424,7 @@
                 </div>
                 <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">کسب درآمد در سفر</h4>
                 <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-snug">بخشی از هزینه سفر خود را با حمل بار جبران کنید.</p>
-                <button class="w-full py-2.5 bg-surface-light dark:bg-surface-dark hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-colors" data-route="flight-opp">
+                <button class="w-full py-2.5 bg-surface-light dark:bg-surface-dark hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-colors" data-route="registered-flight">
                   <span>انتخاب سفر</span>
                   <span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
                 </button>
@@ -978,8 +978,8 @@
     </section>
         </section>
     <section
-      id="page-flight-opp"
-      data-page="flight-opp"
+      id="page-registered-flight"
+      data-page="registered-flight"
       class="page hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/30 selection:text-primary"
       aria-hidden="true"
     >
@@ -1328,7 +1328,7 @@
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white pb-24 overflow-x-hidden">
 <div class="fixed top-0 w-full z-10 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
 <div class="flex items-center justify-between p-4 h-16 max-w-md mx-auto">
-<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white" data-route="flight-opp" type="button">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white" data-route="registered-flight" type="button">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 <h1 class="text-lg font-bold text-slate-900 dark:text-white">جزئیات درخواست</h1>
@@ -1436,9 +1436,9 @@
 <div class="bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-800/50 p-6 rounded-xl shadow-md border border-slate-200 dark:border-slate-600 flex flex-col items-center justify-center text-center gap-2 relative overflow-hidden">
 <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
 <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
-<p class="text-slate-500 dark:text-slate-400 font-medium z-10">پاداش پیشنهادی شما</p>
+<p class="text-slate-500 dark:text-slate-400 font-medium z-10">پاداش پیشنهادی به شما</p>
 <div class="flex items-baseline gap-1 z-10 flex-row-reverse">
-<h2 class="text-4xl font-extrabold text-primary font-display tracking-tight">۷۵,۰۰۰,۰۰۰</h2>
+<h2 class="text-4xl font-extrabold text-primary font-display tracking-tight">۷۵۰</h2>
 <span class="text-lg font-bold text-primary/80">ریال</span>
 </div>
 <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 z-10">پرداخت امن پس از تحویل کالا</p>
@@ -1446,10 +1446,10 @@
 </div>
 <div class="fixed bottom-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] border-t border-slate-100 dark:border-slate-800 p-4 z-50">
 <div class="max-w-md mx-auto grid grid-cols-2 gap-3">
-<button class="w-full py-3.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<button class="w-full py-3.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-route="flight-opp" type="buttom">
                 رد کردن
             </button>
-<button class="w-full py-3.5 px-4 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 transition-all active:scale-[0.98]">
+<button class="w-full py-3.5 px-4 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 transition-all active:scale-[0.98]" data-route="my-trips" type="button">
                 قبول درخواست
             </button>
 </div>
@@ -1458,6 +1458,774 @@
 </body>
         
     </section>
+    <section 
+    id="page-cargo-order"
+    data-page="cargo-order"
+    class="page hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200"
+    aria-hidden="true"> <head>
+      <!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>وضعیت ارسال کالا - Carry to Me</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f6df0",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom RTL adjustments for timeline connector lines if needed */
+        .timeline-connector {
+            right: 19px; /* Adjust based on icon size and padding */
+        }
+        /* Hiding scrollbar for horizontal scrolling elements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-full w-full flex-col max-w-md mx-auto min-h-screen pb-24 bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-800 dark:text-slate-200">arrow_forward</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">شناسه سفارش</span>
+<h2 class="text-base font-bold text-slate-900 dark:text-white dir-ltr">#CD-9821</h2>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-800 dark:text-slate-200">more_horiz</span>
+</button>
+</div>
+<!-- Headline Status -->
+<div class="px-5 pt-6 pb-2">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+</span>
+                    زنده
+                </span>
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">تخمین رسیدن: ۳ ساعت دیگر</span>
+</div>
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                وضعیت: <span class="text-primary">در حال پرواز</span>
+</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">پرواز ایران ایر • IR710 • لندن به تهران</p>
+</div>
+<!-- Map Section -->
+<div class="px-4 py-3">
+<div class="relative w-full aspect-[2/1] rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 group">
+<!-- Map Background -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Map showing flight path curve between London and Tehran" data-location="Flight path map view from London to Tehran" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtoBQzKSvWDHu4ZOlh_HcCAWtZHd5jb2XyEzPU7JeKzSla6sleUC7ufrH3Sc5ZCS8EGGRNsCu2o7vBJ2Y8Q8cIIY9OnnoITOxsP-OQkOTLOBLLebUXA_9Aob6zR6TGKGa9WH4pEPxhlmmzehzp2esUWEDc6qW8YnWBROaJGhqU3H4GofdmCv7JSgflgDh7JLNhMj2viUbUcYWFQdl6mX2OxvdK9_DmB5OrI_hXevRp1caMjINV6z0fOseGXna4V_oBqj55n__Nfmq8'); filter: grayscale(20%) brightness(0.9);">
+</div>
+<!-- Map Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<!-- Flight Path UI Overlay -->
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+<div class="flex flex-col">
+<span class="text-xs opacity-80">مبدا</span>
+<span class="font-bold text-lg">LHR</span>
+</div>
+<div class="flex-1 px-4 flex flex-col items-center">
+<span class="material-symbols-outlined rotate-[-90deg] text-primary">flight</span>
+<div class="w-full h-0.5 bg-white/30 rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-primary w-[65%]"></div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs opacity-80">مقصد</span>
+<span class="font-bold text-lg">IKA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Traveler Profile Section -->
+<div class="px-4 py-2">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center gap-4">
+<div class="relative">
+<img alt="Ali Rezaei Profile" class="w-14 h-14 rounded-full object-cover border-2 border-slate-100 dark:border-slate-600" data-alt="Portrait of a smiling man with a beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwNsLNTsmoYsNpghGPRshQ-RdN4zTwWNkKq1pWX1bilJW-qT1JVnhP-vyeijhN8catHDyASmti4l52huAFjHQfmET5xpnbfJmoMQh8EdDV1a-RVyp-c9aSATqzW3DRjpQpu7yuL6Ps_am4nFFoQGD2FlsfANkPNc8PnxjmPYERj_ZsURup1tmThJ7ppdAIxraidLswsO3_s7-fa9yZ124g_ZLLvOLCF6YWiiUXkqmIunyJoiho9YnjGzwgXBZqQcsd_jV5IgBjerGV"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-0.5 rounded-full border-2 border-white dark:border-slate-800">
+<span class="material-symbols-outlined text-[14px] block">verified</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">علی رضایی</h3>
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="flex items-center gap-0.5 text-amber-500">
+<span class="material-symbols-outlined text-[16px] fill-1">star</span>
+<span class="font-bold">۴.۹</span>
+</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>مسافر تایید شده</span>
+</div>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+</div>
+<!-- Section Header: Status History -->
+<div class="px-5 pt-4 pb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">مسیر حرکت کالا</h3>
+</div>
+<!-- Timeline -->
+<div class="px-5">
+<div class="relative border-r-2 border-slate-200 dark:border-slate-700 mr-3 space-y-8 py-2">
+<!-- Step 1: Completed -->
+<div class="relative flex flex-col gap-1 pr-6 group">
+<div class="absolute -right-[9px] top-1 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-lg bg-primary/20 rounded-full p-0.5">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-bold text-base">دریافت کالا توسط مسافر</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">امروز، ۱۰:۰۰ صبح • فرودگاه هیترو</span>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="relative flex flex-col gap-1 pr-6 group">
+<div class="absolute -right-[9px] top-1 bg-white dark:bg-background-dark p-0.5 rounded-full z-10">
+<span class="material-symbols-outlined text-white text-lg bg-primary rounded-full p-1 shadow-lg shadow-primary/40">flight_takeoff</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary font-bold text-base">سوار شدن به هواپیما</span>
+<span class="text-primary/80 text-sm font-medium">هم‌اکنون • پرواز IR710</span>
+<div class="mt-2 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-700">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">info</span>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    هواپیما تیک‌آف کرده است. به‌روزرسانی بعدی پس از فرود در تهران انجام خواهد شد.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="relative flex flex-col gap-1 pr-6 opacity-60">
+<div class="absolute -right-[9px] top-1 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<span class="w-5 h-5 rounded-full border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 block"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-medium text-base">ترخیص گمرکی</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">در انتظار • فرودگاه امام خمینی</span>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="relative flex flex-col gap-1 pr-6 opacity-60">
+<div class="absolute -right-[9px] top-1 bg-white dark:bg-background-dark p-0.5 rounded-full">
+<span class="w-5 h-5 rounded-full border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 block"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-medium text-base">تحویل نهایی</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">در انتظار</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions Grid -->
+<div class="px-4 py-6 grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">جزئیات سفارش</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">share_location</span>
+</div>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">اشتراک‌گذاری</span>
+</button>
+</div>
+<!-- Safety Banner -->
+<div class="px-4 pb-4">
+<div class="bg-slate-100 dark:bg-slate-800/80 rounded-xl p-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">lock_open</span>
+<p class="text-xs text-slate-500 dark:text-slate-400 leading-tight">
+                    تمام مراحل این سفر توسط بیمه <span class="font-bold text-slate-700 dark:text-slate-300">CarrySecure</span> محافظت می‌شود.
+                </p>
+</div>
+</div>
+<!-- Floating Support Button -->
+<div class="fixed bottom-6 left-6 z-40">
+<button class="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 pl-3 pr-4 py-3 rounded-full shadow-xl shadow-slate-900/20 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="text-sm font-bold">پشتیبانی ۲۴/۷</span>
+</button>
+</div>
+<div class="h-6"></div>
+</div>
+</body></html>
+    </head>
     
+  </section>
+  <section
+  id="page-registered-cargo"
+  data-page="registered-cargo"
+  class="page hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200"
+  aria-hidden="true">
+    </head>
+    <!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carry to Me - Matched Travelers</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f6df0",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.flight-line {
+            background-image: linear-gradient(to left, #cbd5e1 50%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto bg-white dark:bg-slate-900 sm:border-x border-slate-200 dark:border-slate-800">
+<div class="sticky top-0 z-10 flex items-center bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer transition-opacity hover:opacity-70">
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">پروازهای منطبق</h2>
+<div class="flex w-12 items-center justify-end">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold leading-normal cursor-pointer hover:text-red-500 transition-colors">لغو</p>
+</div>
+</div>
+<div class="flex w-full flex-row items-center justify-center gap-2 py-4 px-6">
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary"></div>
+</div>
+<div class="px-5 pt-2">
+<h1 class="text-slate-900 dark:text-white text-2xl font-extrabold leading-tight mb-2">مسافران تایید شده</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">
+                یک مسافر مورد اعتماد را برای حمل بسته خود انتخاب کنید. همه پروفایل‌ها تایید هویت شده‌اند.
+            </p>
+</div>
+<div class="flex gap-2 p-5 overflow-x-auto no-scrollbar mask-gradient">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 transition-transform active:scale-95 shadow-lg shadow-slate-200 dark:shadow-slate-900/50">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<p class="text-sm font-bold">زودترین</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-bold">بالاترین امتیاز</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-bold">کمترین قیمت</p>
+</button>
+</div>
+<div class="flex flex-col gap-4 px-5 pb-24">
+<div class="group relative flex flex-col gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of traveler" class="size-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVJGV_sSSKNHr4gQQG0mO86uK53XHMdvQyNsWo3wbvXpsjmgkAj4aXb2dZ1IAkO5BGF02Lbz5VM8B6bDLpxVvc_x4s6bQQSUTwmOgRyE_B0SdT-n7EMwBMUpKggfRG2TsPkrZpIScUY9hIOTU0ggCU_2gW2zUK_8vCI22AnBdk7K4q9c2vMbYh4uWGrSn2tGHXgrJGS0-ze04hPet3ARc2RptgumKoB1NPyABRHeysruswxUMLNHSaZq-5LFSpvY_XYNcJz9GXcKuA"/>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-primary text-[16px] filled">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-amber-400 text-[16px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-medium">۴.۹</span>
+<span>•</span>
+<span class="font-medium text-slate-500 dark:text-slate-400">۱۲ حمل موفق</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 px-2 py-1 rounded-full">فضای کافی</span>
+</div>
+</div>
+<div class="relative flex items-center justify-between rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">THR</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">تهران</span>
+</div>
+<div class="flex flex-1 flex-col items-center px-4 relative">
+<div class="text-[10px] font-medium text-slate-400 mb-1">۲ ساعت</div>
+<div class="w-full h-[2px] bg-slate-200 dark:bg-slate-700 relative flex items-center justify-center">
+<div class="absolute bg-white dark:bg-slate-900 px-1">
+<span class="material-symbols-outlined text-primary rotate-[270deg] text-[20px]">flight</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">IST</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">استانبول</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">calendar_today</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">فردا، ۱۸ مهر</span>
+</div>
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">schedule</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۰۸:۳۰</span>
+</div>
+</div>
+<button class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md shadow-primary/20 transition-all hover:bg-blue-600 active:scale-95">
+                        انتخاب
+                    </button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of traveler" class="size-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqAVoQ0llmdOX-sPRPr3sn4eF7gbtdL6pmyFoad36ToFUe036C6ZAeSTnhgtZQndz9uxspy3x2-GQ_lnVpNjC6WgStVExb1GbZASNEOJ8s-ORo-f_mW6JVl2q3em86l2aT08rI-fVq9fdXUqWYj3-hvogPT5KKfECjaJzxTHrhQU-ONZIrUk_Z9Z3gZtMKJE5_-Mca4RORudUsby-DTngohCum--2zGcub9osccmKxLyMh-h5DAaxvKKI2M7d6x_14o7_yG1PxplEy"/>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-primary text-[16px] filled">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-amber-400 text-[16px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-medium">۴.۷</span>
+<span>•</span>
+<span class="font-medium text-slate-500 dark:text-slate-400">۵ حمل موفق</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-between rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">THR</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">تهران</span>
+</div>
+<div class="flex flex-1 flex-col items-center px-4 relative">
+<div class="text-[10px] font-medium text-slate-400 mb-1">۲ ساعت</div>
+<div class="w-full h-[2px] bg-slate-200 dark:bg-slate-700 relative flex items-center justify-center">
+<div class="absolute bg-white dark:bg-slate-900 px-1">
+<span class="material-symbols-outlined text-slate-400 rotate-[270deg] text-[20px]">flight</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">IST</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">استانبول</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">calendar_today</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۲۰ مهر</span>
+</div>
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">schedule</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۱۴:۴۵</span>
+</div>
+</div>
+<button class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md shadow-primary/20 transition-all hover:bg-blue-600 active:scale-95">
+                        انتخاب
+                    </button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 opacity-75 hover:opacity-100 transition-opacity">
+<div class="absolute inset-0 z-20 bg-white/50 dark:bg-slate-900/50 backdrop-blur-[1px] flex items-center justify-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<span class="bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">ظرفیت محدود</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of traveler" class="size-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-sm grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWVdlifw07HjXQklhq_iyFhGxpZI5IGSb63v7QhdMPAThtHX4DDnsnId7RJJoqyPoKFPsySCdqFgv99ve17xymRgsO6FW6r8TKPSknFOjktFQ5fFhStb5B9U7-AZyEgpKpG-gm4bWgzwBKy7neFXe-qnexldhj-dvVNDmgCeQWf6gEuUqRoxSuP-_DUic6Lok-mK9Hqlc774NDcy1KIlvpuDjFLyOfMefcU5O_9bAdEH8S6wB7Fo6d2voePkSASCp98BsCZb5J4HUf"/>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-primary text-[16px] filled">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-300 text-[16px] fill-1">star</span>
+<span class="font-medium text-slate-500 dark:text-slate-400">جدید</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-between rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">THR</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">تهران</span>
+</div>
+<div class="flex flex-1 flex-col items-center px-4 relative">
+<div class="text-[10px] font-medium text-slate-400 mb-1">۲ ساعت</div>
+<div class="w-full h-[2px] bg-slate-200 dark:bg-slate-700 relative flex items-center justify-center">
+<div class="absolute bg-white dark:bg-slate-900 px-1">
+<span class="material-symbols-outlined text-slate-400 rotate-[270deg] text-[20px]">flight</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">IST</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">استانبول</span>
+</div>
+</div><!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carry to Me - Matched Travelers</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f6df0",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.flight-line {
+            background-image: linear-gradient(to left, #cbd5e1 50%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto bg-white dark:bg-slate-900 sm:border-x border-slate-200 dark:border-slate-800">
+<div class="sticky top-0 z-10 flex items-center bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer transition-opacity hover:opacity-70">
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">پروازهای منطبق</h2>
+<div class="flex w-12 items-center justify-end">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold leading-normal cursor-pointer hover:text-red-500 transition-colors">لغو</p>
+</div>
+</div>
+<div class="flex w-full flex-row items-center justify-center gap-2 py-4 px-6">
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-full rounded-full bg-primary"></div>
+</div>
+<div class="px-5 pt-2">
+<h1 class="text-slate-900 dark:text-white text-2xl font-extrabold leading-tight mb-2">مسافران تایید شده</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">
+                یک مسافر مورد اعتماد را برای حمل بسته خود انتخاب کنید. همه پروفایل‌ها تایید هویت شده‌اند.
+            </p>
+</div>
+<div class="flex gap-2 p-5 overflow-x-auto no-scrollbar mask-gradient">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 transition-transform active:scale-95 shadow-lg shadow-slate-200 dark:shadow-slate-900/50">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<p class="text-sm font-bold">زودترین</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-bold">بالاترین امتیاز</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-bold">کمترین قیمت</p>
+</button>
+</div>
+<div class="flex flex-col gap-4 px-5 pb-24">
+<div class="group relative flex flex-col gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of traveler" class="size-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVJGV_sSSKNHr4gQQG0mO86uK53XHMdvQyNsWo3wbvXpsjmgkAj4aXb2dZ1IAkO5BGF02Lbz5VM8B6bDLpxVvc_x4s6bQQSUTwmOgRyE_B0SdT-n7EMwBMUpKggfRG2TsPkrZpIScUY9hIOTU0ggCU_2gW2zUK_8vCI22AnBdk7K4q9c2vMbYh4uWGrSn2tGHXgrJGS0-ze04hPet3ARc2RptgumKoB1NPyABRHeysruswxUMLNHSaZq-5LFSpvY_XYNcJz9GXcKuA"/>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-primary text-[16px] filled">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-amber-400 text-[16px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-medium">۴.۹</span>
+<span>•</span>
+<span class="font-medium text-slate-500 dark:text-slate-400">۱۲ حمل موفق</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 px-2 py-1 rounded-full">فضای کافی</span>
+</div>
+</div>
+<div class="relative flex items-center justify-between rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">THR</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">تهران</span>
+</div>
+<div class="flex flex-1 flex-col items-center px-4 relative">
+<div class="text-[10px] font-medium text-slate-400 mb-1">۲ ساعت</div>
+<div class="w-full h-[2px] bg-slate-200 dark:bg-slate-700 relative flex items-center justify-center">
+<div class="absolute bg-white dark:bg-slate-900 px-1">
+<span class="material-symbols-outlined text-primary rotate-[270deg] text-[20px]">flight</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">IST</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">استانبول</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">calendar_today</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">فردا، ۱۸ مهر</span>
+</div>
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">schedule</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۰۸:۳۰</span>
+</div>
+</div>
+<button class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md shadow-primary/20 transition-all hover:bg-blue-600 active:scale-95">
+                        انتخاب
+                    </button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of traveler" class="size-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqAVoQ0llmdOX-sPRPr3sn4eF7gbtdL6pmyFoad36ToFUe036C6ZAeSTnhgtZQndz9uxspy3x2-GQ_lnVpNjC6WgStVExb1GbZASNEOJ8s-ORo-f_mW6JVl2q3em86l2aT08rI-fVq9fdXUqWYj3-hvogPT5KKfECjaJzxTHrhQU-ONZIrUk_Z9Z3gZtMKJE5_-Mca4RORudUsby-DTngohCum--2zGcub9osccmKxLyMh-h5DAaxvKKI2M7d6x_14o7_yG1PxplEy"/>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-primary text-[16px] filled">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-amber-400 text-[16px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-medium">۴.۷</span>
+<span>•</span>
+<span class="font-medium text-slate-500 dark:text-slate-400">۵ حمل موفق</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-between rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">THR</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">تهران</span>
+</div>
+<div class="flex flex-1 flex-col items-center px-4 relative">
+<div class="text-[10px] font-medium text-slate-400 mb-1">۲ ساعت</div>
+<div class="w-full h-[2px] bg-slate-200 dark:bg-slate-700 relative flex items-center justify-center">
+<div class="absolute bg-white dark:bg-slate-900 px-1">
+<span class="material-symbols-outlined text-slate-400 rotate-[270deg] text-[20px]">flight</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">IST</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">استانبول</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">calendar_today</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۲۰ مهر</span>
+</div>
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">schedule</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۱۴:۴۵</span>
+</div>
+</div>
+<button class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md shadow-primary/20 transition-all hover:bg-blue-600 active:scale-95">
+                        انتخاب
+                    </button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 opacity-75 hover:opacity-100 transition-opacity">
+<div class="absolute inset-0 z-20 bg-white/50 dark:bg-slate-900/50 backdrop-blur-[1px] flex items-center justify-center rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<span class="bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">ظرفیت محدود</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of traveler" class="size-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-sm grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWVdlifw07HjXQklhq_iyFhGxpZI5IGSb63v7QhdMPAThtHX4DDnsnId7RJJoqyPoKFPsySCdqFgv99ve17xymRgsO6FW6r8TKPSknFOjktFQ5fFhStb5B9U7-AZyEgpKpG-gm4bWgzwBKy7neFXe-qnexldhj-dvVNDmgCeQWf6gEuUqRoxSuP-_DUic6Lok-mK9Hqlc774NDcy1KIlvpuDjFLyOfMefcU5O_9bAdEH8S6wB7Fo6d2voePkSASCp98BsCZb5J4HUf"/>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+<span class="material-symbols-outlined text-primary text-[16px] filled">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-sm font-bold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-300 text-[16px] fill-1">star</span>
+<span class="font-medium text-slate-500 dark:text-slate-400">جدید</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-between rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow-sm">
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">THR</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">تهران</span>
+</div>
+<div class="flex flex-1 flex-col items-center px-4 relative">
+<div class="text-[10px] font-medium text-slate-400 mb-1">۲ ساعت</div>
+<div class="w-full h-[2px] bg-slate-200 dark:bg-slate-700 relative flex items-center justify-center">
+<div class="absolute bg-white dark:bg-slate-900 px-1">
+<span class="material-symbols-outlined text-slate-400 rotate-[270deg] text-[20px]">flight</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center z-10">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-wider">IST</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">استانبول</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">calendar_today</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۲۲ مهر</span>
+</div>
+</div>
+<button class="flex h-10 items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 text-sm font-bold shadow-sm transition-all active:scale-95">
+                        انتخاب
+                    </button>
+</div>
+</div>
+<div class="mt-4 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 p-5 text-center">
+<div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+<span class="material-symbols-outlined text-primary text-[24px]">notifications_active</span>
+</div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-white">پرواز مناسبی پیدا نکردید؟</h3>
+<p class="mt-1 text-xs text-slate-500 dark:text-slate-400 mb-4">
+                    به محض اینکه مسافر جدیدی برای مسیر تهران به استانبول پیدا شود، به شما خبر می‌دهیم.
+                </p>
+<button class="w-full h-10 rounded-full bg-white dark:bg-slate-800 text-primary font-bold text-sm border border-primary/20 shadow-sm hover:bg-slate-50 transition-colors">
+                    خبرم کن
+                </button>
+</div>
+</div>
+<div class="pointer-events-none fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+</div>
+
+</body></html>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-300 text-[16px]">calendar_today</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">۲۲ مهر</span>
+</div>
+</div>
+<button class="flex h-10 items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 text-sm font-bold shadow-sm transition-all active:scale-95">
+                        انتخاب
+                    </button>
+</div>
+</div>
+<div class="mt-4 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 p-5 text-center">
+<div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+<span class="material-symbols-outlined text-primary text-[24px]">notifications_active</span>
+</div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-white">پرواز مناسبی پیدا نکردید؟</h3>
+<p class="mt-1 text-xs text-slate-500 dark:text-slate-400 mb-4">
+                    به محض اینکه مسافر جدیدی برای مسیر تهران به استانبول پیدا شود، به شما خبر می‌دهیم.
+                </p>
+<button class="w-full h-10 rounded-full bg-white dark:bg-slate-800 text-primary font-bold text-sm border border-primary/20 shadow-sm hover:bg-slate-50 transition-colors">
+                    خبرم کن
+                </button>
+</div>
+</div>
+<div class="pointer-events-none fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+</div>
+
   </body>
 </html>
