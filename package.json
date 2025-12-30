@@ -1,0 +1,15 @@
+{
+    "name": "carrytome-version2",
+    "version": "2.0.0",
+    "description": "Carry to Me application",
+    "scripts": {
+        "validate:html": "node validate-html.js",
+        "validate:js": "node validate-js.js",
+        "validate": "npm run validate:html && npm run validate:js",
+        "check": "npm run validate"
+    },
+    "devDependencies": {
+        "html-validator": "^6.0.0",
+        "eslint": "^8.57.0"
+    }
+}

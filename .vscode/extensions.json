@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "vscode.html-language-features",
+        "dbaeumer.vscode-eslint",
+        "formulahendry.auto-rename-tag",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+    ]
+}
