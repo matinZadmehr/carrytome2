@@ -1046,7 +1046,7 @@
                     </span>
                   </div>
                   <div class="mt-1">
-                    <button class="flex w-full items-center justify-between rounded-xl h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary transition-colors">
+                    <button class="flex w-full items-center justify-between rounded-xl h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary transition-colors" data-route="flight-order" type="button">
                       <span class="font-bold text-sm">۲۱۰ عمان ریال</span>
                       <div class="flex items-center gap-1 text-xs font-medium">
                         مشاهده
@@ -1148,7 +1148,7 @@
               <span class="material-symbols-outlined filled text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
               <span class="text-[10px] font-bold">خانه</span>
             </button>
-            <button class="flex flex-1 flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+            <button class="flex flex-1 flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300" data-route="my-trips" type="button">
               <span class="material-symbols-outlined text-[24px]">flight_takeoff</span>
               <span class="text-[10px] font-medium">سفرهای من</span>
             </button>
@@ -1159,6 +1159,304 @@
           </div>
         </nav>
       </div>
+    </section>
+    <section
+      id="page-my-trips"
+      data-page="my-trips"
+      class="page hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200"
+      aria-hidden="true"
+    >
+      <header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+        <div class="flex items-center px-4 py-3 justify-between max-w-md mx-auto">
+          <button class="flex size-10 items-center justify-center rounded-full active:bg-slate-200 dark:active:bg-slate-800 transition-colors text-slate-900 dark:text-slate-100" data-route="home" type="button">
+            <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+          </button>
+          <h2 class="text-lg font-bold leading-tight tracking-tight text-center flex-1">سفرهای من</h2>
+          <div class="size-10"></div>
+        </div>
+      </header>
+      <main class="max-w-md mx-auto flex flex-col gap-6 p-4 pb-32">
+        <!-- Segmented Control -->
+        <div class="flex w-full">
+          <div class="relative flex h-12 w-full items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 p-1">
+            <label class="relative z-10 flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 text-sm font-bold leading-normal transition-all duration-200 text-primary dark:text-primary-400">
+              <span class="truncate">جاری</span>
+              <input checked="" class="peer invisible w-0 absolute" name="trip_status" type="radio" value="current"/>
+              <div class="absolute inset-0 bg-white dark:bg-slate-700 rounded-lg shadow-sm -z-10 scale-100 opacity-100 transition-all peer-[:not(:checked)]:scale-95 peer-[:not(:checked)]:opacity-0"></div>
+            </label>
+            <label class="relative z-10 flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal transition-all duration-200 hover:text-slate-700 dark:hover:text-slate-200">
+              <span class="truncate">تاریخچه</span>
+              <input class="peer invisible w-0 absolute" name="trip_status" type="radio" value="history"/>
+              <div class="absolute inset-0 bg-white dark:bg-slate-700 rounded-lg shadow-sm -z-10 scale-100 opacity-100 transition-all peer-[:not(:checked)]:scale-95 peer-[:not(:checked)]:opacity-0"></div>
+            </label>
+          </div>
+        </div>
+        <!-- Trip Cards List -->
+        <div class="flex flex-col gap-4">
+          <!-- Card 1: Waiting for Pickup -->
+          <div class="group relative flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+            <!-- Header: Route & Badge -->
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">
+                    در انتظار دریافت
+                  </span>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1 flex items-center gap-2">
+                  <span>تهران (IKA)</span>
+                  <span class="material-symbols-outlined text-slate-400 text-[18px] rotate-180">arrow_right_alt</span>
+                  <span>لندن (LHR)</span>
+                </h3>
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">۱۲ آبان</span>
+                <span class="text-xs text-slate-400 dark:text-slate-500 font-display">14:30</span>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="h-px w-full bg-slate-100 dark:bg-slate-700/50"></div>
+            <!-- Content: Item Details -->
+            <div class="flex gap-4 items-center">
+              <div class="size-16 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                <div class="w-full h-full bg-cover bg-center" data-alt="Modern laptop on a desk workspace" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7xhxfmdQv6Mg00TWYLGcI-bsI2YPax5l1WYVib8iZpLkUp8PZ30nBxI6N5Ehx_J2niYk7WzxkqnKn-jDfAxvWezO8OUiSabtngPjjgaHO3F3CtTEB5AVvW2bS1tln_MbfU4ZoF-7cPUqlyUvxeNAWQTdbeK7FOaSvsCfY-NO1ztdqYkzZx0UlkUH8F7YTm0IGu-TBw57RmgYJlKaKyvMHQxPajUpJI7bvG9zLcne8ziBL4E9nn64FNleRoFJzvCH545R3zm6YqAEP');"></div>
+              </div>
+              <div class="flex flex-col flex-1 gap-1">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">مک‌بوک پرو M2</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">الکترونیکی • با ارزش</p>
+                <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">پاداش: ۱۵۰ دلار</p>
+              </div>
+              <button class="shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 p-2 text-primary dark:text-primary-400 transition-colors">
+                <span class="material-symbols-outlined text-[20px] rotate-180">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <!-- Card 2: In Transit -->
+          <div class="group relative flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+            <!-- Header: Route & Badge -->
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center rounded-md bg-amber-50 dark:bg-amber-900/30 px-2 py-1 text-xs font-medium text-amber-700 dark:text-amber-300 ring-1 ring-inset ring-amber-600/20">
+                    <span class="animate-pulse mr-1.5 size-1.5 rounded-full bg-amber-600 dark:bg-amber-400"></span>
+                    در مسیر
+                  </span>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1 flex items-center gap-2">
+                  <span>دبی (DXB)</span>
+                  <span class="material-symbols-outlined text-slate-400 text-[18px] rotate-180">arrow_right_alt</span>
+                  <span>تهران (IKA)</span>
+                </h3>
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">۲۰ مهر</span>
+                <span class="text-xs text-slate-400 dark:text-slate-500 font-display">09:15</span>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="h-px w-full bg-slate-100 dark:bg-slate-700/50"></div>
+            <!-- Content: Item Details -->
+            <div class="flex gap-4 items-center">
+              <div class="size-16 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                <div class="w-full h-full bg-cover bg-center" data-alt="Stack of legal business documents" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZYF1YUGwxeOh96vXiJQEKN7KT1UxxHiGKAUr-MbXXFKtDmVpWvAxuxGwK0wDJhkl7_YCGdYr-jRA2Ah2g4fDQsr5MVY1MZAZbLXjMIt1tz7EM6mpbXm_b-SGXKqcUzm_8Oss6ftRE5zr3n4mn78yn7zMaOOvJAJRNC4mJZCe4kB54cQcB-Ii5q83gaDDDe4FBIijIOImFcb_7_eCYpGUDpbAdLxdsy2rg2P3IeHnzFlFaVdK1iIJlZ_kUbqwNTLI8Cxuyq81c0A0_');"></div>
+              </div>
+              <div class="flex flex-col flex-1 gap-1">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">اسناد حقوقی</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">مدارک • حساس</p>
+                <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">پاداش: ۵۰ دلار</p>
+              </div>
+              <button class="shrink-0 flex items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/40 hover:bg-amber-200 p-2 text-amber-700 dark:text-amber-400 transition-colors">
+                <span class="material-symbols-outlined text-[20px]">edit</span>
+              </button>
+            </div>
+          </div>
+          <!-- Card 3: Accepted/Confirmed -->
+          <div class="group relative flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md opacity-80 hover:opacity-100">
+            <!-- Header: Route & Badge -->
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-inset ring-slate-500/10">
+                    تایید شده
+                  </span>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1 flex items-center gap-2">
+                  <span>استانبول (IST)</span>
+                  <span class="material-symbols-outlined text-slate-400 text-[18px] rotate-180">arrow_right_alt</span>
+                  <span>تهران (IKA)</span>
+                </h3>
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">۲۵ آبان</span>
+                <span class="text-xs text-slate-400 dark:text-slate-500 font-display">18:45</span>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="h-px w-full bg-slate-100 dark:bg-slate-700/50"></div>
+            <!-- Content: Item Details -->
+            <div class="flex gap-4 items-center">
+              <div class="size-16 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                <div class="w-full h-full bg-cover bg-center" data-alt="Luxury wristwatch in a box" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABmVsJtZvRP-f3fqxLLzujm2xy0xSDzh_uqzI3VtfTWT9TeJVl0mvx8xuYwayXkMrijgJSxpZzwwhWXN9qYL5BCT_opY2kKCoesCB0SHiaiHzoQKM9aJ4iwhjGcB2H9tGvM2CFF3OtUZQrnWMdFoAP6-fB8mMX6-MiywbsmigsJlM1jxJ1gUIhHI0qnydDsbLhWNyiTcWwQRiUDLEEL2SdzxmyqFlQDbdBlESngK8J8EJ-z2Z-P2_zS-CrI_64p7bqVN8F5ty67Mls');"></div>
+              </div>
+              <div class="flex flex-col flex-1 gap-1">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">ساعت مچی رولکس</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">اکسسوری • بیمه شده</p>
+                <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">پاداش: ۲۰۰ دلار</p>
+              </div>
+              <button class="shrink-0 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 p-2 text-slate-600 dark:text-slate-300 transition-colors">
+                <span class="material-symbols-outlined text-[20px] rotate-180">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Floating Action Button (FAB) Area -->
+      <div class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pointer-events-none flex justify-center pb-6">
+        <button class="pointer-events-auto shadow-lg shadow-primary/30 flex w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95 gap-3" type="button">
+          <span class="material-symbols-outlined text-[24px]">add_circle</span>
+          <span class="truncate">جستجوی بارهای جدید</span>
+        </button>3
+      </div>
+    </section>
+    <section
+      id="page-flight-order"
+      data-page="flight-order"
+      class="page hidden bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200"
+      aria-hidden="true"
+      >
+      </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white pb-24 overflow-x-hidden">
+<div class="fixed top-0 w-full z-10 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between p-4 h-16 max-w-md mx-auto">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<h1 class="text-lg font-bold text-slate-900 dark:text-white">جزئیات درخواست</h1>
+<div class="w-10"></div> 
+</div>
+</div>
+<div class="pt-20 px-4 max-w-md mx-auto space-y-6">
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 w-full bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern silver laptop on a clean desk workspace" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0VFCXlpHiNM2HbGlLLwnQagUqoZz2IzGBQJ1G-2aaxxHgZpohGlohHesr0xnqjXHxnq-YWM4aH5NCRPBl8O1z-aJwV0wBMRNO1w0LbYZaUKsNhBxHJurn_-FJ3NyUths7c25KB88xHrr7cB19uBDej4W14jjhJYX7L7Ot7hhWmbpWDJUyZCDSkegaIJT3sY6MBOuVZxaj_Unsemfef2WPSjw3OCXHlyDSxeQU3bdGtmi9l-tOD68-XBui2PJZbbfeg624r63OfW06');">
+</div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-primary shadow-sm">
+                    الکترونیک
+                </div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">MacBook Pro 16 inch</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">مدل ۲۰۲۳ - بسته‌بندی پلمپ</p>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-slate-100 dark:border-slate-600">
+<span class="material-symbols-outlined text-green-600 text-[20px]">verified_user</span>
+<span class="text-sm text-slate-600 dark:text-slate-300">ارزش اظهار شده:</span>
+<span class="text-base font-bold text-slate-900 dark:text-white mr-auto font-display">$2,500</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of the sender smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7W_kpzdsSF9JxraTUO-mYmIYLbdrGbrVwtjlzXzkBb1CDuO5iQHAcBHraFqw4312sncu6uMujmMwef4kWBy_blZbbr6hm7w0yz3SxHI4TC6GVJVC4xp9fuqfNjgxjANlo1suMgjZ4GP0swMxTxmEQf21CRKzlQaR9uFvKlRFo94BnONLFP_bFtq4MDu32xzoHCKeV5AvpbT0B9bKL2s0V1eTnuVHVh2ey9B-8w8tekGy57_LzodX2S-HFVK0Vbg1U-zDpgzZhtxgR');"></div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 text-white rounded-full p-0.5 border-2 border-white dark:border-slate-800">
+<span class="material-symbols-outlined text-[14px] block">check</span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white">امیرحسین م.</h3>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-amber-400 text-[16px] fill-current">star</span>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">۴.۸ (۲۴ ارسال)</span>
+</div>
+</div>
+<button class="text-primary text-sm font-semibold hover:bg-primary/10 px-3 py-1.5 rounded-lg transition-colors">
+                پروفایل
+            </button>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">route</span>
+                مسیر و زمان‌بندی
+            </h3>
+<div class="relative pr-2">
+<div class="absolute top-3 bottom-8 right-[19px] w-[2px] bg-slate-200 dark:bg-slate-600"></div>
+<div class="relative flex gap-4 pb-8">
+<div class="flex flex-col items-center gap-1 z-10">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined text-[20px]">flight_takeoff</span>
+</div>
+</div>
+<div class="flex flex-col pt-1">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">مبدا</span>
+<span class="text-base font-bold text-slate-900 dark:text-white">تهران (IKA)</span>
+<span class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">۲۰ مهر ۱۴۰۳ - ساعت ۱۰:۳۰</span>
+</div>
+</div>
+<div class="relative flex gap-4">
+<div class="flex flex-col items-center gap-1 z-10">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined text-[20px]">flight_land</span>
+</div>
+</div>
+<div class="flex flex-col pt-1">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">مقصد</span>
+<span class="text-base font-bold text-slate-900 dark:text-white">تورنتو (YYZ)</span>
+<span class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">۲۱ مهر ۱۴۰۳ - ساعت ۱۴:۱۵</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                شرایط حمل
+            </h3>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-700/60 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[18px]">luggage</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">فقط کابین</span>
+</div>
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-700/60 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-amber-600 dark:text-amber-500 text-[18px]">warning</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">شکستنی</span>
+</div>
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-700/60 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[18px]">scale</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200 font-display">2.5 kg</span>
+</div>
+</div>
+<div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm rounded-lg leading-relaxed flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] mt-0.5 shrink-0">lightbulb</span>
+<p>لطفاً توجه داشته باشید که این کالا دارای باتری لیتیومی است و حتماً باید در کیف دستی حمل شود.</p>
+</div>
+</div>
+<div class="bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-800/50 p-6 rounded-xl shadow-md border border-slate-200 dark:border-slate-600 flex flex-col items-center justify-center text-center gap-2 relative overflow-hidden">
+<div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+<p class="text-slate-500 dark:text-slate-400 font-medium z-10">پاداش پیشنهادی شما</p>
+<div class="flex items-baseline gap-1 z-10 flex-row-reverse">
+<h2 class="text-4xl font-extrabold text-primary font-display tracking-tight">۷۵,۰۰۰,۰۰۰</h2>
+<span class="text-lg font-bold text-primary/80">ریال</span>
+</div>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1 z-10">پرداخت امن پس از تحویل کالا</p>
+</div>
+</div>
+<div class="fixed bottom-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] border-t border-slate-100 dark:border-slate-800 p-4 z-50">
+<div class="max-w-md mx-auto grid grid-cols-2 gap-3">
+<button class="w-full py-3.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                رد کردن
+            </button>
+<button class="w-full py-3.5 px-4 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 transition-all active:scale-[0.98]">
+                قبول درخواست
+            </button>
+</div>
+</div>
+
+</body>
+        
     </section>
     
   </body>
