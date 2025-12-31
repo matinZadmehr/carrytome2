@@ -69,15 +69,21 @@
     const searchInput = document.querySelector('[data-page="cargo-cat"] input[type="text"]');
     if (!searchInput) return;
 
-    const buttons = document.querySelectorAll('[data-page="cargo-cat"] [role="radiogroup"] button');
+    const container = document.querySelector('[data-page="cargo-cat"] .flex.flex-col.gap-3.mt-2');
+    if (!container) return;
+
+    const buttons = container.querySelectorAll('button[type="button"]');
     const categories = [
-      { name: "کالای لوکس", keywords: ["لوکس", "طلا", "جواهر", "ساعت"] },
-      { name: "اسناد و مدارک", keywords: ["مدارک", "اسناد", "پاسپورت", "شناسنامه", "قرارداد"] },
+      { name: "فلزات ارزشمند", keywords: ["طلا", "جواهر", "نقره"] },
+      { name: "اسناد و مدارک", keywords: ["مدارک", "اسناد", "پاسپورت", "شناسنامه", "قرارداد", "سکه"] },
       { name: "الکترونیک", keywords: ["الکترونیک", "موبایل", "لپ", "دوربین", "گوشی", "آیفون"] },
-      { name: "پزشکی و دارو", keywords: ["دارو", "پزشکی", "تجهیزات", "دارویی"] },
-      { name: "آثار هنری", keywords: ["تابلو", "مجسمه", "هنری", "آثار"] },
-      { name: "سایر موارد", keywords: ["سایر", "جعبه", "عمومی"] },
+      { name: "پزشکی و بهداشتی", keywords: ["دارو", "پزشکی", "تجهیزات", "بهداشتی"] },
+      { name: "کالای شکستنی", keywords: ["تابلو", "مجسمه", "ظروف شیشه ای"] },
+      { name: "سایر موارد", keywords: ["سایر", "جعبه", "عمومی", "سایر"] },
     ];
+
+    // Track selected categories
+    const selectedCategories = new Set();
 
     searchInput.addEventListener("input", (e) => {
       const query = e.target.value.toLowerCase().trim();
@@ -89,18 +95,42 @@
       });
     });
 
-    buttons.forEach((button) => {
+    buttons.forEach((button, index) => {
       button.addEventListener("click", () => {
-        buttons.forEach((b) => {
-          const circle = b.querySelector("div:last-child");
+        const circle = button.querySelector("div:last-child");
+        const isSelected = selectedCategories.has(index);
+
+        if (isSelected) {
+          // Deselect
+          selectedCategories.delete(index);
           circle.style.background = "";
           circle.style.borderColor = "";
-        });
+          circle.innerHTML = "";
+          button.classList.remove("border-primary");
+          button.style.borderColor = "";
+        } else {
+          // Select
+          selectedCategories.add(index);
+          circle.style.borderColor = "#0f6df0";
+          circle.style.background = "#0f6df0";
+          circle.innerHTML = '<span class="material-symbols-outlined" style="font-size: 16px; color: white;">check</span>';
+          button.classList.add("border-primary");
+          button.style.borderColor = "#0f6df0";
+        }
 
-        const circle = button.querySelector("div:last-child");
-        circle.style.borderColor = "#0f6df0";
-        circle.style.background = "#0f6df0";
-        circle.innerHTML = '<span class="material-symbols-outlined" style="font-size: 16px; color: white;">check</span>';
+        // Update continue button text
+        const continueButton = document.querySelector('[data-page="cargo-cat"] button[data-route="cargo-weight"]');
+        if (continueButton) {
+          const count = selectedCategories.size;
+          const textSpan = continueButton.querySelector("span:first-child");
+          if (textSpan) {
+            if (count > 0) {
+              textSpan.textContent = `ادامه (${count})`;
+            } else {
+              textSpan.textContent = "ادامه";
+            }
+          }
+        }
       });
     });
   }
