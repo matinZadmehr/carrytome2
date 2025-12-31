@@ -2980,10 +2980,53 @@
     </a>
     <div class="relative -top-6">
       <button
-        class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white transform transition-transform active:scale-95"
-        data-route="cargo-cat">
+        class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white transform transition-transform active:scale-95">
         <span class="material-symbols-outlined text-3xl">add</span>
       </button>
+
+      <!-- Role selection modal -->
+      <div id="role-modal" class="fixed inset-0 z-[9999] hidden items-end md:items-center justify-center">
+        <div class="absolute inset-0 bg-black/40" data-close-role-modal></div>
+        <div
+          class="relative w-full max-w-md mx-auto bg-white dark:bg-slate-800 rounded-t-2xl md:rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-4 md:p-6 m-0 md:m-4">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white">انتخاب نقش</h3>
+            <button
+              class="size-9 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500"
+              type="button" data-close-role-modal>
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 text-right mb-4">لطفاً یکی از گزینه‌های زیر را
+            انتخاب کنید</p>
+          <div class="grid grid-cols-1 gap-3">
+            <button
+              class="w-full flex items-center justify-between gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-surface-light dark:bg-surface-dark p-4 hover:border-primary/60 active:scale-[0.98] transition-all"
+              type="button" data-route="traveler-route" data-close-role-modal>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary">savings</span>
+                <div class="flex flex-col items-start">
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">رسانا باش</span>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">کسب درآمد از سفر</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined rtl:rotate-180 text-slate-400">arrow_right_alt</span>
+            </button>
+            <button
+              class="w-full flex items-center justify-between gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-surface-light dark:bg-surface-dark p-4 hover:border-primary/60 active:scale-[0.98] transition-all"
+              type="button" data-route="cargo-cat" data-close-role-modal>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary">mark_email_unread</span>
+                <div class="flex flex-col items-start">
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">سپارا باش</span>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">ثبت مرسوله برای ارسال</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined rtl:rotate-180 text-slate-400">arrow_right_alt</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 w-16 transition-colors"
       href="#" data-route="message-hub">

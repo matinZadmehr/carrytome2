@@ -219,6 +219,44 @@
     }
   }
 
+  function initRoleModal() {
+    const modal = document.getElementById("role-modal");
+    if (!modal) return;
+
+    const show = () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    };
+    const hide = () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    };
+
+    // Attach to existing big add button in main panel
+    const bigAddIcon = document.querySelector('span.material-symbols-outlined.text-3xl');
+    const bigAddBtn = bigAddIcon?.closest('button');
+    if (bigAddBtn) {
+      bigAddBtn.setAttribute('data-open-role-modal', '');
+      bigAddBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        show();
+      });
+    }
+
+    // Close handlers
+    modal.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
+      if (target.hasAttribute('data-close-role-modal')) {
+        hide();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') hide();
+    });
+  }
+
   function initRouter() {
     const pages = Array.from(document.querySelectorAll("[data-page]"));
     if (pages.length === 0) return null;
@@ -372,6 +410,7 @@
     initWeightSlider();
     initValueSlider();
     initRouteSelection();
+    initRoleModal();
     hideAppLoader();
     window.setTimeout(hideAppLoader, 2500);
   });
