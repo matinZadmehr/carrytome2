@@ -445,7 +445,7 @@
                 </span>
                 <span class="text-xs font-bold uppercase tracking-wider text-primary">سپارا</span>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">ارسال یک کالا</h4>
+              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">سپردن کالا</h4>
               <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-snug">مرسوله ی خود را در دستانی مطمئن به
                 امانت بگذارید</p>
               <button
@@ -477,7 +477,7 @@
                 </span>
                 <span class="text-xs font-bold uppercase tracking-wider text-secondary">رسانا</span>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">کسب درآمد در سفر</h4>
+              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">کسب درآمد از سفر</h4>
               <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-snug">بخشی از هزینه سفر خود را با حمل
                 بار جبران کنید.</p>
               <button
@@ -1378,126 +1378,69 @@
         </button>
       </div>
     </header>
-    <main class="flex-grow w-full max-w-md mx-auto pb-24 px-4 pt-4 space-y-6">
-      <section>
-        <div class="flex items-center justify-between mb-4 px-1">
-          <div class="flex items-center gap-2">
-            <span class="p-1.5 rounded-full bg-primary/10 text-primary">
-              <span class="material-symbols-outlined text-[20px]">mark_email_unread</span>
-            </span>
-            <h2 class="text-lg font-bold text-slate-900 dark:text-white">سپردن مرسوله</h2>
-          </div>
-          <button class="text-xs font-bold text-primary hover:text-blue-600 transition-colors">مشاهده همه</button>
+    <main class="flex-grow w-full max-w-md mx-auto pb-24 px-4 flex flex-col justify-center gap-6">
+      <a class="group relative w-full bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-3xl p-6 flex items-center gap-5 shadow-sm hover:shadow-lg transition-all duration-300 active:scale-[0.98]"
+        href="#">
+        <div
+          class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-3xl">mark_email_unread</span>
         </div>
-        <div class="space-y-3">
-          <div
-            class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-all">
-            <div class="flex items-start justify-between mb-3">
-              <div class="flex gap-3">
-                <div
-                  class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-2xl">
-                  📦</div>
-                <div>
-                  <h3 class="font-bold text-slate-900 dark:text-white">بسته مدارک</h3>
-                  <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mt-1 gap-1">
-                    <span>تهران (IKA)</span>
-                    <span class="material-symbols-outlined text-[12px] rotate-180">arrow_right_alt</span>
-                    <span>استانبول (IST)</span>
-                  </div>
-                </div>
-              </div>
-              <span
-                class="px-2.5 py-1 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-bold">در
-                انتظار رسانا</span>
-            </div>
-            <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700/50 pt-3 mt-1">
-              <span class="text-xs text-slate-400 font-medium">ثبت شده: ۲ ساعت پیش</span>
-              <button class="flex items-center text-xs font-bold text-primary">جزئیات <span
-                  class="material-symbols-outlined text-[16px] mr-1 rotate-180">arrow_back</span></button>
-            </div>
-          </div>
-          <div
-            class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-all opacity-80 hover:opacity-100">
-            <div class="flex items-start justify-between mb-3">
-              <div class="flex gap-3">
-                <div
-                  class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-2xl">
-                  💻</div>
-                <div>
-                  <h3 class="font-bold text-slate-900 dark:text-white">مک‌بوک پرو</h3>
-                  <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mt-1 gap-1">
-                    <span>دبی (DXB)</span>
-                    <span class="material-symbols-outlined text-[12px] rotate-180">arrow_right_alt</span>
-                    <span>تهران (IKA)</span>
-                  </div>
-                </div>
-              </div>
-              <span
-                class="px-2.5 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold flex items-center gap-1"><span
-                  class="material-symbols-outlined text-[14px]">check</span>تحویل شده</span>
-            </div>
-            <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700/50 pt-3 mt-1">
-              <span class="text-xs text-slate-400 font-medium">۱۴ آبان ۱۴۰۲</span>
-              <button class="flex items-center text-xs font-bold text-slate-500">مشاهده رسید</button>
-            </div>
-          </div>
+        <div class="flex-grow">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-1">سپردن مرسوله</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">مشاهده سفارش‌های ارسالی</p>
         </div>
-      </section>
-      <div class="h-px bg-slate-100 dark:bg-slate-800 w-full"></div>
-      <section>
-        <div class="flex items-center justify-between mb-4 px-1">
-          <div class="flex items-center gap-2">
-            <span class="p-1.5 rounded-full bg-secondary/10 text-secondary">
-              <span class="material-symbols-outlined text-[20px]">savings</span>
-            </span>
-            <h2 class="text-lg font-bold text-slate-900 dark:text-white">انتقال مرسوله</h2>
-          </div>
-          <button class="text-xs font-bold text-secondary hover:text-emerald-600 transition-colors">مشاهده همه</button>
+        <div
+          class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+          <span class="material-symbols-outlined text-xl">chevron_left</span>
         </div>
-        <div class="space-y-3">
-          <div
-            class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-all relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-1 h-full bg-secondary"></div>
-            <div class="flex items-start justify-between mb-3">
-              <div class="flex gap-3">
-                <div
-                  class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center relative">
-                  <span class="material-symbols-outlined">flight_takeoff</span>
-                </div>
-                <div>
-                  <h3 class="font-bold text-slate-900 dark:text-white">سفر به تورنتو</h3>
-                  <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mt-1 gap-1">
-                    <span>تهران</span>
-                    <span class="material-symbols-outlined text-[12px] rotate-180">arrow_right_alt</span>
-                    <span>تورنتو</span>
-                  </div>
-                </div>
-              </div>
-              <div class="text-left">
-                <span class="block text-lg font-black text-secondary">۵۰$</span>
-                <span class="text-[10px] text-slate-400">پاداش</span>
-              </div>
-            </div>
-            <div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-3 mb-2 flex items-center gap-3">
-              <div
-                class="w-8 h-8 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center text-sm shadow-sm">
-                💊</div>
-              <div class="flex-1">
-                <p class="text-xs font-bold text-slate-700 dark:text-slate-200">داروی مکمل خاص</p>
-                <p class="text-[10px] text-slate-400">۵۰۰ گرم • شکستنی</p>
-              </div>
-            </div>
-            <div class="flex items-center justify-between pt-2">
-              <span
-                class="px-2.5 py-1 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-bold">در
-                حال سفر</span>
-              <button class="flex items-center text-xs font-bold text-secondary">مدیریت سفر <span
-                  class="material-symbols-outlined text-[16px] mr-1 rotate-180">arrow_back</span></button>
-            </div>
-          </div>
+      </a>
+      <a class="group relative w-full bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-3xl p-6 flex items-center gap-5 shadow-sm hover:shadow-lg transition-all duration-300 active:scale-[0.98]"
+        href="#">
+        <div
+          class="w-16 h-16 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-3xl">flight_takeoff</span>
         </div>
-      </section>
+        <div class="flex-grow">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-1">انتقال مرسوله</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">مشاهده سفرهای من</p>
+        </div>
+        <div
+          class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-secondary group-hover:bg-secondary/10 transition-colors">
+          <span class="material-symbols-outlined text-xl">chevron_left</span>
+        </div>
+      </a>
     </main>
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+      <div class="max-w-md mx-auto flex items-center justify-between h-16 pb-2">
+        <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 w-16 transition-colors"
+          href="#">
+          <span class="material-symbols-outlined text-2xl">home</span>
+          <span class="text-[10px] font-medium">خانه</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-primary w-16 transition-colors" href="#">
+          <span class="material-symbols-outlined filled text-2xl">inventory_2</span>
+          <span class="text-[10px] font-bold">سفارش‌ها</span>
+        </a>
+        <div class="relative -top-6">
+          <button
+            class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white transform transition-transform active:scale-95">
+            <span class="material-symbols-outlined text-3xl">add</span>
+          </button>
+        </div>
+        <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 w-16 transition-colors"
+          href="#">
+          <span class="material-symbols-outlined text-2xl">chat_bubble</span>
+          <span class="text-[10px] font-medium">پیام‌ها</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 w-16 transition-colors"
+          href="#">
+          <span class="material-symbols-outlined text-2xl">person</span>
+          <span class="text-[10px] font-medium">پروفایل</span>
+        </a>
+      </div>
+    </nav>
+    <div class="h-6"></div>
   </section>
 
   <section id="page-message-hub" data-page="message-hub"
