@@ -219,6 +219,80 @@
     }
   }
 
+  function initTravelerRouteSelection() {
+    const page = document.querySelector('[data-page="traveler-route"]');
+    if (!page) return;
+
+    const inputs = page.querySelectorAll('input[type="text"][placeholder*="فرودگاه"], input[type="text"][placeholder*="شهر"]');
+    if (inputs.length < 2) return;
+
+    const originInput = inputs[0];
+    const destInput = inputs[1];
+
+    const routes = [
+      { origin: "تهران", destination: "مسقط" },
+      { origin: "مسقط", destination: "تهران" },
+    ];
+
+    // Popular route buttons (first two)
+    const popularButtons = page.querySelectorAll('div.flex.flex-wrap button');
+    popularButtons.forEach((btn, index) => {
+      if (index < 2 && routes[index]) {
+        const route = routes[index];
+        btn.addEventListener('click', () => {
+          originInput.value = route.origin;
+          destInput.value = route.destination;
+        });
+      }
+    });
+
+    // Swap button: find the span with text 'swap_vert' and bind its closest button
+    const iconSpans = Array.from(page.querySelectorAll('button span.material-symbols-outlined'));
+    const swapSpan = iconSpans.find(sp => sp.textContent && sp.textContent.trim() === 'swap_vert');
+    const swapBtn = swapSpan ? swapSpan.closest('button') : null;
+    if (swapBtn) {
+      swapBtn.addEventListener('click', () => {
+        [originInput.value, destInput.value] = [destInput.value, originInput.value];
+      });
+    }
+  }
+
+  function initRegisteredFlightFilters() {
+    const page = document.querySelector('[data-page="registered-flight"]');
+    if (!page) return;
+
+    const buttons = Array.from(page.querySelectorAll('div.flex.gap-3 button'));
+    if (buttons.length === 0) return;
+
+    const setActive = (activeIndex) => {
+      buttons.forEach((btn, idx) => {
+        btn.classList.remove('bg-slate-900', 'dark:bg-white');
+        btn.classList.remove('text-white', 'dark:text-slate-900');
+        if (idx === activeIndex) {
+          btn.classList.add('bg-slate-900', 'dark:bg-white');
+          const span = btn.querySelector('span');
+          if (span) {
+            span.classList.add('text-white');
+            span.classList.remove('dark:text-slate-300');
+          }
+        } else {
+          const span = btn.querySelector('span');
+          if (span) {
+            span.classList.remove('text-white');
+          }
+        }
+      });
+    };
+
+    // Activate filters: 0 = همه, 1 = بیشترین پاداش, 2 = نزدیک‌ترین زمان
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', () => setActive(idx));
+    });
+
+    // Default to "همه"
+    setActive(0);
+  }
+
   function initRoleModal() {
     const modal = document.getElementById("role-modal");
     if (!modal) return;
@@ -239,6 +313,7 @@
       bigAddBtn.setAttribute('data-open-role-modal', '');
       bigAddBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         show();
       });
     }
@@ -410,6 +485,8 @@
     initWeightSlider();
     initValueSlider();
     initRouteSelection();
+    initTravelerRouteSelection();
+    initRegisteredFlightFilters();
     initRoleModal();
     hideAppLoader();
     window.setTimeout(hideAppLoader, 2500);
