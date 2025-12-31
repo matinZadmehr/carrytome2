@@ -65,6 +65,130 @@
     }
   }
 
+  function initCargoCategories() {
+    const searchInput = document.querySelector('[data-page="cargo-cat"] input[type="text"]');
+    if (!searchInput) return;
+
+    const buttons = document.querySelectorAll('[data-page="cargo-cat"] [role="radiogroup"] button');
+    const categories = [
+      { name: "کالای لوکس", keywords: ["لوکس", "طلا", "جواهر", "ساعت"] },
+      { name: "اسناد و مدارک", keywords: ["مدارک", "اسناد", "پاسپورت", "شناسنامه", "قرارداد"] },
+      { name: "الکترونیک", keywords: ["الکترونیک", "موبایل", "لپ", "دوربین", "گوشی", "آیفون"] },
+      { name: "پزشکی و دارو", keywords: ["دارو", "پزشکی", "تجهیزات", "دارویی"] },
+      { name: "آثار هنری", keywords: ["تابلو", "مجسمه", "هنری", "آثار"] },
+      { name: "سایر موارد", keywords: ["سایر", "جعبه", "عمومی"] },
+    ];
+
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
+
+      buttons.forEach((button) => {
+        const text = button.textContent.toLowerCase();
+        const matches = !query || text.includes(query);
+        button.style.display = matches ? "" : "none";
+      });
+    });
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((b) => {
+          const circle = b.querySelector("div:last-child");
+          circle.style.background = "";
+          circle.style.borderColor = "";
+        });
+
+        const circle = button.querySelector("div:last-child");
+        circle.style.borderColor = "#0f6df0";
+        circle.style.background = "#0f6df0";
+        circle.innerHTML = '<span class="material-symbols-outlined" style="font-size: 16px; color: white;">check</span>';
+      });
+    });
+  }
+
+  function initWeightSlider() {
+    const page = document.querySelector('[data-page="cargo-weight"]');
+    if (!page) return;
+
+    const slider = page.querySelector('input[type="range"]');
+    const displaySpan = page.querySelector('span.text-7xl');
+
+    if (!slider || !displaySpan) return;
+
+    const updateDisplay = () => {
+      displaySpan.textContent = slider.value;
+    };
+
+    slider.addEventListener("input", updateDisplay);
+  }
+
+  function initValueSlider() {
+    const page = document.querySelector('[data-page="cargo-val"]');
+    if (!page) return;
+
+    const slider = page.querySelector('input[type="range"]');
+    const display = page.querySelector('input[inputmode="numeric"]');
+
+    if (!slider || !display) return;
+
+    const updateValues = () => {
+      display.value = slider.value;
+    };
+
+    slider.addEventListener("input", updateValues);
+    display.addEventListener("input", () => {
+      slider.value = display.value;
+    });
+
+    const buttons = page.querySelectorAll('[type="button"]');
+    buttons.forEach((btn) => {
+      const amount = parseInt(btn.textContent);
+      if (!isNaN(amount)) {
+        btn.addEventListener("click", () => {
+          display.value = amount;
+          slider.value = amount;
+
+          buttons.forEach((b) => b.classList.remove("border-primary", "bg-primary/10"));
+          btn.classList.add("border-primary", "bg-primary/10");
+        });
+      }
+    });
+  }
+
+  function initRouteSelection() {
+    const page = document.querySelector('[data-page="cargo-route"]');
+    if (!page) return;
+
+    const inputs = page.querySelectorAll('input[type="text"][placeholder*="شهر"]');
+    if (inputs.length < 2) return;
+
+    const originInput = inputs[0];
+    const destInput = inputs[1];
+
+    const routes = [
+      { origin: "تهران", destination: "مسقط" },
+      { origin: "مسقط", destination: "تهران" },
+    ];
+
+    const routeButtons = page.querySelectorAll('[type="button"][class*="flex"][class*="items-center"][class*="gap"]');
+
+    routeButtons.forEach((btn, index) => {
+      if (index < 2 && routes[index]) {
+        const route = routes[index];
+        btn.addEventListener("click", () => {
+          originInput.value = route.origin;
+          destInput.value = route.destination;
+        });
+      }
+    });
+
+    const swapBtn = page.querySelector('button[type="button"] .material-symbols-outlined[style*="swap"]')?.closest('button');
+    if (swapBtn) {
+      swapBtn.addEventListener("click", () => {
+        [originInput.value, destInput.value] = [destInput.value, originInput.value];
+      });
+    }
+  }
+
   function initRouter() {
     const pages = Array.from(document.querySelectorAll("[data-page]"));
     if (pages.length === 0) return null;
@@ -214,6 +338,10 @@
     initTelegramWebApp();
     const router = initRouter();
     initNavigation(router);
+    initCargoCategories();
+    initWeightSlider();
+    initValueSlider();
+    initRouteSelection();
     hideAppLoader();
     window.setTimeout(hideAppLoader, 2500);
   });
