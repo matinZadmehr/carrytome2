@@ -383,110 +383,138 @@
   </div>
   <section id="page-home" data-page="home"
     class="page bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden transition-colors duration-200">
+
+    <!-- HEADER -->
     <header
       class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
       <div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
-        <div class="flex justify-start"></div>
-        <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white text-center">
+        <div></div>
+        <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
           Carry to Me
         </h1>
-        <div class="flex justify-end"></div>
+        <div></div>
       </div>
     </header>
+
     <main class="flex-grow w-full max-w-md mx-auto pb-24">
+
+      <!-- HERO -->
       <section class="p-4 pt-6">
         <div
-          class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0a2e5c] to-[#0f6df0] text-white shadow-lg padding-bottom">
+          class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0a2e5c] to-[#0f6df0] text-white shadow-lg">
           <div class="absolute -top-12 -left-12 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
           <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-accent/20 rounded-full blur-2xl"></div>
+
           <div class="relative z-10 p-6 flex flex-col items-center text-center gap-6">
             <div
               class="flex items-center justify-center w-40 h-40 rounded-full bg-white/10 backdrop-blur-sm overflow-hidden">
               <img src="https://raw.githubusercontent.com/matinZadmehr/carrytome2/main/asset/images/logo.jpg"
                 alt="Carry to Me Logo" class="w-full h-full object-cover" />
             </div>
+
             <div class="space-y-2">
               <div
-                class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/10 text-xs font-medium text-white mb-2">
+                class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/20 border border-white/10 text-xs font-medium">
                 <span class="material-symbols-outlined text-[16px] text-accent">verified_user</span>
                 <span>امنیت تضمین شده</span>
               </div>
-              <h2 class="text-2xl font-black leading-tight">تحویل امن و سریع</h2>
-              <p class="text-white/80 text-sm font-medium leading-relaxed max-w-[280px] mx-auto">
+
+              <h2 class="text-2xl font-black">تحویل امن و سریع</h2>
+
+              <p class="text-white/80 text-sm max-w-[280px] mx-auto">
                 کالای ارزشمند خود را به مسافران تایید شده بسپارید و با خیال راحت تحویل بگیرید.
               </p>
             </div>
           </div>
         </div>
       </section>
+
       <div class="px-6 py-4">
         <h3 class="text-lg font-bold text-slate-900 dark:text-white">شروع کنید</h3>
       </div>
+
+      <!-- سپردن کالا -->
       <section class="px-4 pb-4">
-        <div
-          class="group relative overflow-hidden bg-surface-light dark:bg-surface-dark rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+        <div class="group relative overflow-hidden rounded-xl
+               bg-gradient-to-br from-[#8C1D18] to-[#C0392B]
+               shadow-[0_6px_20px_rgba(140,29,24,0.35)]
+               border border-red-900/30
+               transition-all hover:shadow-xl">
+
           <div class="flex flex-row items-stretch">
-            <div class="w-32 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+            <div class="w-32 relative overflow-hidden">
               <div
                 class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-500 group-hover:scale-110"
-                data-alt="Close up of hands exchanging a neatly wrapped gift package"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKpvpbEBhwaGHhEWf0p9aiJ79olgxzGefUxvnhESgYfLbs5O1nHyPhQ36avip5Fp2jy4K9G6wQJ4J9d7H3FUzHy6lcKVFt4UGmslxOz1DCuzWltZG7j-nH9Of7lH56Bt1cKetbhQZQswHOhxRW6GQ5j9IWJOZ9ab-fjtkPUhURI-iRco8pGvQIQ_2SiQWwUS4vbpmwlI00YfKYsC_mqMwQePgYIRaOS0XiWgAPZtfwVhYrKG51fkH4qaFKNIXDC-RtVYwgoZee1JbN');">
+                style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKpvpbEBhwaGHhEWf0p9aiJ79olgxzGefUxvnhESgYfLbs5O1nHyPhQ36avip5Fp2jy4K9G6wQJ4J9d7H3FUzHy6lcKVFt4UGmslxOz1DCuzWltZG7j-nH9Of7lH56Bt1cKetbhQZQswHOhxRW6GQ5j9IWJOZ9ab-fjtkPUhURI-iRco8pGvQIQ_2SiQWwUS4vbpmwlI00YfKYsC_mqMwQePgYIRaOS0XiWgAPZtfwVhYrKG51fkH4qaFKNIXDC-RtVYwgoZee1JbN');">
               </div>
-              <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+              <div class="absolute inset-0 bg-black/20"></div>
             </div>
+
             <div class="flex-1 p-4 flex flex-col justify-center">
               <div class="flex items-center gap-2 mb-1">
-                <span class="p-1.5 rounded-full bg-primary/10 text-primary">
+                <span class="p-1.5 rounded-full bg-white/20 text-white">
                   <span class="material-symbols-outlined text-[20px]">mark_email_unread</span>
                 </span>
-                <span class="text-xs font-bold uppercase tracking-wider text-primary">سپارا</span>
+                <span class="text-xs font-bold tracking-wider text-white/90">سپارا</span>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">سپردن کالا</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-snug">مرسوله ی خود را در دستانی مطمئن به
-                امانت بگذارید</p>
-              <button
-                class="w-full py-2.5 bg-surface-light dark:bg-surface-dark hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-colors "
-                data-route="cargo-cat" type="button">
-                <span>ثبت مرسوله</span>
 
+              <h4 class="text-lg font-bold text-white mb-1">سپردن کالا</h4>
+              <p class="text-white/80 text-sm mb-4">
+                مرسوله‌ی خود را در دستانی مطمئن به امانت بگذارید
+              </p>
+
+              <button class="w-full py-2.5 bg-white text-[#8C1D18] rounded-full text-sm font-bold
+                     hover:bg-white/90 transition-all active:scale-95" data-route="cargo-cat" type="button">
+                ثبت مرسوله
               </button>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- کسب درآمد از سفر -->
       <section class="px-4 pb-4">
-        <div
-          class="group relative overflow-hidden bg-surface-light dark:bg-surface-dark rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+        <div class="group relative overflow-hidden rounded-xl
+               bg-gradient-to-br from-[#0F766E] to-[#22C55E]
+               shadow-[0_6px_20px_rgba(34,197,94,0.35)]
+               border border-emerald-700/30
+               transition-all hover:shadow-xl">
+
           <div class="flex flex-row items-stretch">
-            <div class="w-32 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+            <div class="w-32 relative overflow-hidden">
               <div
                 class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-500 group-hover:scale-110"
-                data-alt="Traveler looking at flight board in airport terminal holding luggage"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8u1rXDeFG7xlpdFuAN1ssVonBjoFTGxCRdbLe8ihywMLFpOxcjw7_Rsog89IIohWvWVU0WiTbuKmlHfqzRNB1NR6OAWNnpI74wQ1Hv5-d9q6Pq0tT7oFHZw5NulrKDG4_cCeKGBmGemOsaMc-Gl8fCxtyLHUX_VPjByFysfFWv7VpkVz40m-4jBTD6mI2p1rZXitaSr6SvORhJ1nkEK7wg_4ICFJteJsAk8Ot-684JEnQmwcD4heLL0bF1wrmxStLm4uO6E_qi93M');">
+                style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8u1rXDeFG7xlpdFuAN1ssVonBjoFTGxCRdbLe8ihywMLFpOxcjw7_Rsog89IIohWvWVU0WiTbuKmlHfqzRNB1NR6OAWNnpI74wQ1Hv5-d9q6Pq0tT7oFHZw5NulrKDG4_cCeKGBmGemOsaMc-Gl8fCxtyLHUX_VPjByFysfFWv7VpkVz40m-4jBTD6mI2p1rZXitaSr6SvORhJ1nkEK7wg_4ICFJteJsAk8Ot-684JEnQmwcD4heLL0bF1wrmxStLm4uO6E_qi93M');">
               </div>
-              <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+              <div class="absolute inset-0 bg-black/20"></div>
             </div>
+
             <div class="flex-1 p-4 flex flex-col justify-center">
               <div class="flex items-center gap-2 mb-1">
-                <span class="p-1.5 rounded-full bg-secondary/10 text-secondary">
+                <span class="p-1.5 rounded-full bg-white/20 text-white">
                   <span class="material-symbols-outlined text-[20px]">savings</span>
                 </span>
-                <span class="text-xs font-bold uppercase tracking-wider text-secondary">رسانا</span>
+                <span class="text-xs font-bold tracking-wider text-white/90">رسانا</span>
               </div>
-              <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">کسب درآمد از سفر</h4>
-              <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 leading-snug">بخشی از هزینه سفر خود را با حمل
-                بار جبران کنید.</p>
-              <button
-                class="w-full py-2.5 bg-surface-light dark:bg-surface-dark hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-colors"
-                data-route="traveler-route" type="button">
-                <span>ثبت سفر</span>
+
+              <h4 class="text-lg font-bold text-white mb-1">کسب درآمد از سفر</h4>
+              <p class="text-white/80 text-sm mb-4">
+                بخشی از هزینه سفر خود را با حمل بار جبران کنید
+              </p>
+
+              <button class="w-full py-2.5 bg-white text-[#0F766E] rounded-full text-sm font-bold
+                     hover:bg-white/90 transition-all active:scale-95" data-route="traveler-route" type="button">
+                ثبت سفر
               </button>
             </div>
           </div>
         </div>
       </section>
+
     </main>
   </section>
+
+
   <section id="page-cargo-cat" data-page="cargo-cat"
     class="page hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary/30 selection:text-primary"
     aria-hidden="true">
