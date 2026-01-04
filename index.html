@@ -1762,18 +1762,28 @@
     <main class="max-w-md mx-auto flex flex-col gap-6 p-4 pb-28">
       <div class="flex w-full">
         <div
-          class="relative flex h-12 w-full items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 p-1">
+          class="relative grid grid-cols-3 h-12 w-full items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 p-1">
+          <!-- ثبت شده (Leftmost) -->
           <label
-            class="relative z-10 flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 text-sm font-bold leading-normal transition-all duration-200 text-primary dark:text-primary-400">
-            <span class="truncate">جاری</span>
+            class="relative z-10 flex w-full cursor-pointer h-full items-center justify-center rounded-lg px-2 text-sm font-medium leading-normal transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+            <span class="truncate">ثبت شده</span>
+            <input class="peer invisible w-0 absolute" name="trip_status" type="radio" value="submitted" />
+            <div
+              class="absolute inset-0 bg-white dark:bg-slate-700 rounded-lg shadow-sm -z-10 scale-100 opacity-100 transition-all peer-[:not(:checked)]:scale-95 peer-[:not(:checked)]:opacity-0">
+            </div>
+          </label>
+          <!-- فعال (Middle) -->
+          <label
+            class="relative z-10 flex w-full cursor-pointer h-full items-center justify-center rounded-lg px-2 text-sm font-medium leading-normal transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+            <span class="truncate">فعال</span>
             <input checked="" class="peer invisible w-0 absolute" name="trip_status" type="radio" value="current" />
             <div
               class="absolute inset-0 bg-white dark:bg-slate-700 rounded-lg shadow-sm -z-10 scale-100 opacity-100 transition-all peer-[:not(:checked)]:scale-95 peer-[:not(:checked)]:opacity-0">
             </div>
           </label>
-          <label
-            class="relative z-10 flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal transition-all duration-200 hover:text-slate-700 dark:hover:text-slate-200">
-            <span class="truncate">تاریخچه</span>
+          <!-- اتمام یافته (Rightmost) -->
+          <label class="relative z-10 flex w-full cursor-pointer h-full items-center justify-center rounded-lg px-2 text-sm font-medium leading-normal transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200>
+            <span class=" truncate">اتمام یافته</span>
             <input class="peer invisible w-0 absolute" name="trip_status" type="radio" value="history" />
             <div
               class="absolute inset-0 bg-white dark:bg-slate-700 rounded-lg shadow-sm -z-10 scale-100 opacity-100 transition-all peer-[:not(:checked)]:scale-95 peer-[:not(:checked)]:opacity-0">
@@ -1783,7 +1793,7 @@
       </div>
       <div class="flex flex-col gap-4">
         <div
-          class="group relative flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+          class="group relative flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800  transition-all hover:shadow-md">
           <div class="flex items-start justify-between">
             <div class="flex flex-col gap-1">
               <div class="flex items-center gap-2">
